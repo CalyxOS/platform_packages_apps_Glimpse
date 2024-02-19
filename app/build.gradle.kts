@@ -32,7 +32,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "org.lineageos.glimpse"
+        applicationId = "org.calyxos.glimpse"
         minSdk = 30
         targetSdk = 35
         versionCode = 1
