@@ -60,6 +60,11 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard-rules.pro"],
     },
+
+    aaptflags: [
+        "--rename-manifest-package",
+        "org.calyxos.glimpse",
+    ],
 }
 
 prebuilt_etc {
