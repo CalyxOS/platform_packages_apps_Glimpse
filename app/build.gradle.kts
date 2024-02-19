@@ -31,7 +31,7 @@ android {
     namespace = "org.lineageos.glimpse"
 
     defaultConfig {
-        applicationId = "org.lineageos.glimpse"
+        applicationId = "org.calyxos.glimpse"
         minSdk = 30
         targetSdk = 34
         versionCode = 1

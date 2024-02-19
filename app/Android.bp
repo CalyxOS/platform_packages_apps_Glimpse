@@ -29,8 +29,8 @@ android_app {
 
     required: [
         "GlimpseFrameworksBaseOverlay",
-        "initial-package-stopped-states-org.lineageos.glimpse",
-        "preinstalled-packages-org.lineageos.glimpse",
+        "initial-package-stopped-states-org.calyxos.glimpse",
+        "preinstalled-packages-org.calyxos.glimpse",
     ],
 
     static_libs: [
@@ -60,20 +60,25 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard-rules.pro"],
     },
+
+    aaptflags: [
+        "--rename-manifest-package",
+        "org.calyxos.glimpse",
+    ],
 }
 
 prebuilt_etc {
-    name: "initial-package-stopped-states-org.lineageos.glimpse",
+    name: "initial-package-stopped-states-org.calyxos.glimpse",
     product_specific: true,
     sub_dir: "sysconfig",
-    src: "initial-package-stopped-states-org.lineageos.glimpse.xml",
+    src: "initial-package-stopped-states-org.calyxos.glimpse.xml",
     filename_from_src: true,
 }
 
 prebuilt_etc {
-    name: "preinstalled-packages-org.lineageos.glimpse",
+    name: "preinstalled-packages-org.calyxos.glimpse",
     product_specific: true,
     sub_dir: "sysconfig",
-    src: "preinstalled-packages-org.lineageos.glimpse.xml",
+    src: "preinstalled-packages-org.calyxos.glimpse.xml",
     filename_from_src: true,
 }
