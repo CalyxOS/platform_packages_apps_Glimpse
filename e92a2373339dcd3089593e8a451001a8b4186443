@@ -16,6 +16,24 @@
       "message": "We haven\u0027t changed this in other apps",
       "revId": "e92a2373339dcd3089593e8a451001a8b4186443",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22d61027_4c1ae072",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-23T15:22:13Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "034349ce_f91b370c",
+      "revId": "e92a2373339dcd3089593e8a451001a8b4186443",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
