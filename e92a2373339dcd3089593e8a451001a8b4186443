@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "034349ce_f91b370c",
+        "filename": "app/build.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-02-23T08:27:05Z",
+      "side": 0,
+      "message": "We haven\u0027t changed this in other apps",
+      "revId": "e92a2373339dcd3089593e8a451001a8b4186443",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
