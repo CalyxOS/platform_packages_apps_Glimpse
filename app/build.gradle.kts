@@ -38,6 +38,17 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        create("aosp") {
+            // Generated from the AOSP testkey:
+            // https://android.googlesource.com/platform/build/+/refs/tags/android-11.0.0_r29/target/product/security/testkey.pk8
+            keyAlias = "testkey"
+            keyPassword = "testkey"
+            storeFile = file("testkey.jks")
+            storePassword = "testkey"
+        }
+    }
+
     buildTypes {
         getByName("release") {
             // Enables code shrinking, obfuscation, and optimization.
@@ -55,8 +66,7 @@ android {
             )
         }
         getByName("debug") {
-            // Append .dev to package name so we won't conflict with AOSP build.
-            applicationIdSuffix = ".dev"
+            signingConfig = signingConfigs.getByName("aosp")
         }
     }
 
