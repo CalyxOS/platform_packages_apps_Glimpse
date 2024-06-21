@@ -17,6 +17,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
@@ -80,6 +81,9 @@ class AlbumViewerFragment : Fragment(R.layout.fragment_album_viewer) {
     private val recyclerView by getViewProperty<RecyclerView>(R.id.recyclerView)
     private val toolbar by getViewProperty<MaterialToolbar>(R.id.toolbar)
 
+    private val warningTrashTimePeriod by getViewProperty<TextView>(R.id.warningTrashTimePeriod)
+    private val warningTrashTimePeriodToolbar by getViewProperty<TextView>(R.id.textView)
+
     // Permissions
     private val permissionsGatedCallback = PermissionsGatedCallback(this) {
         viewLifecycleOwner.lifecycleScope.launch {
@@ -93,6 +97,10 @@ class AlbumViewerFragment : Fragment(R.layout.fragment_album_viewer) {
                             recyclerView.isVisible = !noMedia
                             toolbar.menu.findItem(R.id.emptyTrash)?.isVisible = !noMedia
                             noMediaLinearLayout.isVisible = noMedia
+
+                            val inTrash = bucketId == MediaStoreBuckets.MEDIA_STORE_BUCKET_TRASH.id
+                            warningTrashTimePeriod.isVisible = inTrash && noMedia
+                            warningTrashTimePeriodToolbar.isVisible = inTrash && !noMedia
                         }
 
                         is Empty -> Unit
