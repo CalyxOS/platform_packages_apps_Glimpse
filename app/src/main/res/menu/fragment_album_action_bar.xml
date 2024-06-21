@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      SPDX-FileCopyrightText: 2023 The LineageOS Project
+     SPDX-FileCopyrightText: 2024 The Calyx Institute
      SPDX-License-Identifier: Apache-2.0
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,10 +17,18 @@
 
     <item
         style="@style/Theme.Glimpse.TopAppBarOption"
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/file_action_delete"
+        android:contentDescription="@string/file_action_delete"
+        app:showAsAction="ifRoom" />
+
+    <item
+        style="@style/Theme.Glimpse.TopAppBarOption"
         android:id="@+id/moveToTrash"
         android:icon="@drawable/ic_delete"
         android:title="@string/file_action_move_to_trash"
-        android:contentDescription="@string/file_action_move_to_trash"
-        app:showAsAction="ifRoom" />
+        android:visible="false"
+        app:showAsAction="never" />
 
 </menu>
