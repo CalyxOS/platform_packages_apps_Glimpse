@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024 The Calyx Institute
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -58,6 +59,7 @@ import org.lineageos.glimpse.viewmodels.MediaViewerViewModel
 import org.lineageos.glimpse.viewmodels.QueryResult.Data
 import org.lineageos.glimpse.viewmodels.QueryResult.Empty
 import java.text.SimpleDateFormat
+import org.lineageos.glimpse.fragments.DeleteDialogFragment
 import kotlin.reflect.safeCast
 
 /**
@@ -414,7 +416,7 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
 
         deleteButton.setOnClickListener {
             MediaStoreMedia::class.safeCast(uiModel.displayedMedia.value)?.let {
-                trashMedia(it)
+                DeleteDialogFragment.show(it.uri, supportFragmentManager)
             }
         }
 
