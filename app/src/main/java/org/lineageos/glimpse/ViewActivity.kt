@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024 The Calyx Institute
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -32,6 +33,7 @@ import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.preference.PreferenceManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -58,6 +60,8 @@ import org.lineageos.glimpse.viewmodels.MediaViewerViewModel
 import org.lineageos.glimpse.viewmodels.QueryResult.Data
 import org.lineageos.glimpse.viewmodels.QueryResult.Empty
 import java.text.SimpleDateFormat
+import org.lineageos.glimpse.calyx.ext.permanentlyDeleteFiles
+import org.lineageos.glimpse.calyx.fragments.DeleteDialogFragment
 import kotlin.reflect.safeCast
 
 /**
@@ -434,6 +438,21 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
         viewPager.registerOnPageChangeCallback(onPageChangeCallback)
 
         permissionsGatedCallback.runAfterPermissionsCheck()
+
+        // CalyxOS Modifications
+        deleteButton.setOnLongClickListener(null)
+        deleteButton.setOnClickListener {
+            MediaStoreMedia::class.safeCast(uiModel.displayedMedia.value)?.let {
+                DeleteDialogFragment.show(it.uri, manager = supportFragmentManager) { _, _ ->
+                    val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+                    if (sharedPreferences.permanentlyDeleteFiles) {
+                        deleteUriContract.launch(contentResolver.createDeleteRequest(it.uri))
+                    } else {
+                        trashMedia(it)
+                    }
+                }
+            }
+        }
     }
 
     override fun onResume() {
