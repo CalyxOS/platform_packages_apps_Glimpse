@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The Calyx Institute
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -29,6 +30,7 @@ import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.preference.PreferenceManager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -36,6 +38,8 @@ import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.lineageos.glimpse.calyx.ext.permanentlyDeleteFiles
+import org.lineageos.glimpse.calyx.fragments.DeleteDialogFragment
 import org.lineageos.glimpse.datasources.MediaError
 import org.lineageos.glimpse.ext.buildEditIntent
 import org.lineageos.glimpse.ext.buildShareIntent
@@ -286,6 +290,27 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                 }
             }
         }
+
+        deleteButton.setOnLongClickListener(null)
+        deleteButton.setOnClickListener {
+            viewModel.displayedMedia.value?.let { media ->
+                if (media.isTrashed) {
+                    MediaDialogsUtils.openRestoreFromTrashDialog(this, media) {
+                        trashMedia(it.first(), false)
+                    }
+                } else {
+                    DeleteDialogFragment.show(media, manager = supportFragmentManager) { _, _ ->
+                        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+
+                        if (sharedPreferences.permanentlyDeleteFiles) {
+                            deleteUriContract.launch(contentResolver.createDeleteRequest(media.uri))
+                        } else {
+                            trashMedia(media)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     override fun onResume() {
@@ -427,7 +452,7 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                     val isTrashed = displayedMedia?.isTrashed ?: false
                     deleteButton.text = when (isTrashed) {
                         true -> getString(R.string.file_action_restore_from_trash)
-                        false -> getString(R.string.file_action_move_to_trash)
+                        false -> getString(R.string.file_action_delete)
                     }
                     deleteButton.setCompoundDrawablesWithIntrinsicBounds(
                         0,
