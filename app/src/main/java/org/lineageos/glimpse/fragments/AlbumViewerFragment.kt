@@ -17,6 +17,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
@@ -397,6 +398,11 @@ class AlbumViewerFragment : Fragment(R.layout.fragment_album_viewer) {
         model.inSelectionMode.observe(viewLifecycleOwner, inSelectionModeObserver)
 
         permissionsGatedCallback.runAfterPermissionsCheck()
+
+        // CalyxOS Modifications
+        if (bucketId == MediaStoreBuckets.MEDIA_STORE_BUCKET_TRASH.id) {
+            view.findViewById<TextView>(R.id.warningTrashTimePeriod).isVisible = true
+        }
     }
 
     override fun onDestroyView() {

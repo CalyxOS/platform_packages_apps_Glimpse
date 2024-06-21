@@ -17,4 +17,7 @@
 
     <!-- File actions -->
     <string name="file_action_delete">Delete</string>
+
+    <!-- Warnings and information -->
+    <string name="warning_trash_time_period">Files will be permanently deleted after 30 days from Trash.</string>
 </resources>
