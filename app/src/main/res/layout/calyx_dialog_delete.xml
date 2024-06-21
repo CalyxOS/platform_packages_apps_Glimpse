@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The Calyx Institute
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp">
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:checked="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
