@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024 The Calyx Institute
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -32,6 +33,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StorageStrategy
@@ -43,6 +45,8 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.lineageos.glimpse.R
 import org.lineageos.glimpse.ViewActivity
+import org.lineageos.glimpse.calyx.ext.permanentlyDeleteFiles
+import org.lineageos.glimpse.calyx.fragments.DeleteDialogFragment
 import org.lineageos.glimpse.ext.*
 import org.lineageos.glimpse.models.Album
 import org.lineageos.glimpse.models.MediaStoreMedia
@@ -199,6 +203,30 @@ class AlbumViewerFragment : Fragment(R.layout.fragment_album_viewer) {
                     R.id.moveToTrash -> {
                         MediaDialogsUtils.openMoveToTrashDialog(requireContext(), *selection) {
                             trashMedias(true, *selection)
+                        }
+
+                        true
+                    }
+
+                    R.id.delete -> {
+                        DeleteDialogFragment.show(
+                            *selection,
+                            manager = childFragmentManager
+                        ) { _, _ ->
+                            val sharedPreferences =
+                                PreferenceManager.getDefaultSharedPreferences(requireContext())
+
+                            if (sharedPreferences.permanentlyDeleteFiles) {
+                                deleteForeverContract.launch(
+                                    requireContext().contentResolver.createDeleteRequest(
+                                        *selection.map { media ->
+                                            media.uri
+                                        }.toTypedArray()
+                                    )
+                                )
+                            } else {
+                                trashMedias(true, *selection)
+                            }
                         }
 
                         true
