@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2024 The Calyx Institute
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- File deletion -->
+    <plurals name="delete_confirmation_title">
+        <item quantity="one">Delete this file?</item>
+        <item quantity="other">Delete these files?</item>
+    </plurals>
+    <string name="delete_confirmation_permanent">Permanently delete</string>
+</resources>
