@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9a66a91_d08d9f94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-21T12:29:24Z",
+      "side": 1,
+      "message": "I have tried to keep the major modification in new package and files to avoid having merge conflicts with upstream.",
+      "revId": "ea9daa7bb51571a4ba16ea685458c1ce9eec0f08",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
