@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b87ef25f_2c76e7e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-22T20:23:19Z",
+      "side": 1,
+      "message": "Waiting for some more UX feedback",
+      "revId": "97e7065c460837a729b0e42358324360dbe20482",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f402ba75_e079ec11",
+        "filename": "app/src/main/java/org/lineageos/glimpse/ViewActivity.kt",
+        "patchSetId": 12
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-06-22T20:23:19Z",
+      "side": 1,
+      "message": "Nit: this comment is not needed",
+      "revId": "97e7065c460837a729b0e42358324360dbe20482",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
