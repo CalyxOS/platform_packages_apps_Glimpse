@@ -33,6 +33,24 @@
       "message": "Nit: this comment is not needed",
       "revId": "97e7065c460837a729b0e42358324360dbe20482",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cc03aea_08f2822b",
+        "filename": "app/src/main/java/org/lineageos/glimpse/ViewActivity.kt",
+        "patchSetId": 12
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-23T13:40:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "f402ba75_e079ec11",
+      "revId": "97e7065c460837a729b0e42358324360dbe20482",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
