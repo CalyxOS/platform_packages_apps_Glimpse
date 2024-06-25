@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e564a1fc_56f9baba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-06-25T14:28:30Z",
+      "side": 1,
+      "message": "This may be partly an existing issue, but when you look at a trashed item, the Delete button shows a restoration icon but still says \"Delete\". Then, when you tap that button, you get this exact same new delete dialog even though it\u0027s already in the trash. From there, you can either have \"Permanently delete\" checked, and this will actually delete the photo, or you can have it unchecked, and the photo will be restored. The dialog definitely doesn\u0027t match this behavior.\n\nWhen viewing an item that is in the trash, that button should serve one purpose only: restore or permanently delete (potentially with confirmation).\n\nOther than that quirk, I like this a lot and it seems to work great!",
+      "revId": "554cf5d597f36fc63fb2be9406a542eb3db393a7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
