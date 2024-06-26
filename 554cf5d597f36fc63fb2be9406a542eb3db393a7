@@ -34,6 +34,24 @@
       "parentUuid": "e564a1fc_56f9baba",
       "revId": "554cf5d597f36fc63fb2be9406a542eb3db393a7",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd5075a1_be906ace",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-26T14:42:42Z",
+      "side": 1,
+      "message": "Upstream patch: Ib52a593027199ec682dfebe2419043104430be58",
+      "parentUuid": "723b557d_eb2bf28c",
+      "revId": "554cf5d597f36fc63fb2be9406a542eb3db393a7",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
