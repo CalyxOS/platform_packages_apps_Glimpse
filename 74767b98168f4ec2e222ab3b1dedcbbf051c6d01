@@ -16,6 +16,23 @@
       "message": "Assuming upstream will take time to merge again, pushed on our gerrit",
       "revId": "74767b98168f4ec2e222ab3b1dedcbbf051c6d01",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f6c0b4d_32145715",
+        "filename": "app/src/main/java/org/lineageos/glimpse/ViewActivity.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-27T08:24:54Z",
+      "side": 1,
+      "message": "This is the same as upstream. We use the delete string instead in the next patch.",
+      "revId": "74767b98168f4ec2e222ab3b1dedcbbf051c6d01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
