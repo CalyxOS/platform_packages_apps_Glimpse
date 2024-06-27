@@ -463,6 +463,17 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                 }
             }
         }
+
+        uiModel.displayedMedia.observe(this@ViewActivity) { displayedMedia ->
+            MediaStoreMedia::class.safeCast(displayedMedia)?.let { media ->
+
+                // Disable non-available actions in trash
+                adjustButton.isEnabled = !media.isTrashed
+                favoriteButton.isEnabled = !media.isTrashed
+                shareButton.isEnabled = !media.isTrashed
+                useAsButton.isEnabled = !media.isTrashed
+            }
+        }
     }
 
     override fun onResume() {
