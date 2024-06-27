@@ -16,6 +16,24 @@
       "message": "```suggestion\n    \u003cstring name\u003d\"warning_trash_time_period\"\u003eFiles will be permanently deleted after 30 days in trash.\u003c/string\u003e\n```",
       "revId": "da297740d6cd6999a449fa153d64c6d28ead1ff0",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c45a0d3_78428cf2",
+        "filename": "app/src/main/res/values/calyx_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-27T12:15:11Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "f929f65d_962b2005",
+      "revId": "da297740d6cd6999a449fa153d64c6d28ead1ff0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
