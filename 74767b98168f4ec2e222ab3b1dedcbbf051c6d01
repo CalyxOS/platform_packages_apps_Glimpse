@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7043a534_75565096",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-06-27T07:48:41Z",
+      "side": 1,
+      "message": "Assuming upstream will take time to merge again, pushed on our gerrit",
+      "revId": "74767b98168f4ec2e222ab3b1dedcbbf051c6d01",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
