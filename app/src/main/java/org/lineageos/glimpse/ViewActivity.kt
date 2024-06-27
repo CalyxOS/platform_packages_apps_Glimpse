@@ -311,6 +311,14 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                 }
             }
         }
+
+        // Disable non-available actions in trash
+        viewModel.displayedMedia.value?.let { media ->
+            adjustButton.isEnabled = !media.isTrashed
+            favoriteButton.isEnabled = !media.isTrashed
+            shareButton.isEnabled = !media.isTrashed
+            useAsButton.isEnabled = !media.isTrashed
+        }
     }
 
     override fun onResume() {
