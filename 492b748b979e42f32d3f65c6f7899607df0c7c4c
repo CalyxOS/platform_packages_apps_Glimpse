@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d897e95d_8684ad9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-07-08T14:38:37Z",
+      "side": 1,
+      "message": "I also don\u0027t know what it would break, but imo just get a different app if you want to view internet-based content, like... a web browser? mpv? VLC?",
+      "revId": "492b748b979e42f32d3f65c6f7899607df0c7c4c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
