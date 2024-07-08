@@ -34,6 +34,24 @@
       "parentUuid": "d897e95d_8684ad9d",
       "revId": "492b748b979e42f32d3f65c6f7899607df0c7c4c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ec35cc1_be58f81c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-07-08T14:42:11Z",
+      "side": 1,
+      "message": "I see, app integrations... Weird if true but I can believe it. Sounds like CTS tests would be the way to go if we have no idea how else to test it or why it exists.",
+      "parentUuid": "95e08e36_340a0361",
+      "revId": "492b748b979e42f32d3f65c6f7899607df0c7c4c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
