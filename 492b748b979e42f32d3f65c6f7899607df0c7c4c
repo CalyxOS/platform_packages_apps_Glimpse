@@ -16,6 +16,24 @@
       "message": "I also don\u0027t know what it would break, but imo just get a different app if you want to view internet-based content, like... a web browser? mpv? VLC?",
       "revId": "492b748b979e42f32d3f65c6f7899607df0c7c4c",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95e08e36_340a0361",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-08T14:39:45Z",
+      "side": 1,
+      "message": "Apps _may_ rely on this / may break, there might perhaps be some relevant CTS tests too.\n\nA browser or any third party apps are very different from the built-in Gallery.",
+      "parentUuid": "d897e95d_8684ad9d",
+      "revId": "492b748b979e42f32d3f65c6f7899607df0c7c4c",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
