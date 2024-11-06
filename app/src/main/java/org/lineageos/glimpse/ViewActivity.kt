@@ -235,7 +235,7 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
                         arrayOf(it) + additionalMedias
                     } ?: additionalMedias
 
-                    initData(medias.distinct().sortedByDescending { it.dateAdded })
+                    initData(medias.distinct().sortedByDescending { it.dateModified })
                 } ?: albumId?.also {
                     repeatOnLifecycle(Lifecycle.State.STARTED) {
                         model.media.collectLatest { data ->
@@ -283,8 +283,8 @@ class ViewActivity : AppCompatActivity(R.layout.activity_view) {
 
             // Update date and time text
             mediaStoreMedia?.let {
-                toolbar.title = dateFormatter.format(it.dateAdded)
-                toolbar.subtitle = timeFormatter.format(it.dateAdded)
+                toolbar.title = dateFormatter.format(it.dateModified)
+                toolbar.subtitle = timeFormatter.format(it.dateModified)
             } ?: run {
                 toolbar.title = ""
                 toolbar.subtitle = ""
