@@ -48,7 +48,10 @@ import org.lineageos.glimpse.R
 import org.lineageos.glimpse.ViewActivity
 import org.lineageos.glimpse.calyx.ext.permanentlyDeleteFiles
 import org.lineageos.glimpse.calyx.fragments.DeleteDialogFragment
-import org.lineageos.glimpse.ext.*
+import org.lineageos.glimpse.ext.buildShareIntent
+import org.lineageos.glimpse.ext.createDeleteRequest
+import org.lineageos.glimpse.ext.createTrashRequest
+import org.lineageos.glimpse.ext.getViewProperty
 import org.lineageos.glimpse.models.Album
 import org.lineageos.glimpse.models.MediaStoreMedia
 import org.lineageos.glimpse.recyclerview.ThumbnailAdapter
