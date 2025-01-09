@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4882ab83_bc860365",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2025-01-09T06:09:40Z",
+      "side": 1,
+      "message": "Please move to appropriate branch when ready",
+      "revId": "03d20f7986ebedff97fc056652d215704cb31791",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
