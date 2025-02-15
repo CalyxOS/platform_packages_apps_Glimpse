@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2024 The LineageOS Project
+ * SPDX-FileCopyrightText: 2024-2025 The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -35,6 +35,7 @@ import org.lineageos.glimpse.models.MediaType
 import org.lineageos.glimpse.models.RequestStatus
 import org.lineageos.glimpse.models.RequestStatus.Companion.map
 import org.lineageos.glimpse.utils.MimeUtils
+import java.util.Date
 
 /**
  * A view model used by activities to handle intents.
@@ -71,10 +72,12 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
         /**
          * Pick a content.
          *
+         * @param mediaType The file type to select, null to avoid filtering
          * @param mimeType The type to select, null to avoid filtering
          * @param multiple Whether multiple items can be selected
          */
         class PickIntent(
+            val mediaType: MediaType? = null,
             val mimeType: String? = null,
             val multiple: Boolean = false,
         ) : ParsedIntent()
@@ -189,7 +192,8 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
 
                 Intent.ACTION_GET_CONTENT,
                 Intent.ACTION_PICK -> ParsedIntent.PickIntent(
-                    mimeType,
+                    mimeType?.let { MimeUtils.mimeTypeToMediaType(it) },
+                    mimeType?.takeUnless { it.endsWith("/*") },
                     intent.extras?.getBoolean(
                         Intent.EXTRA_ALLOW_MULTIPLE, false
                     ) ?: false,
@@ -219,7 +223,7 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
         .flowOn(Dispatchers.IO)
         .stateIn(
             viewModelScope,
-            SharingStarted.WhileSubscribed(),
+            SharingStarted.Eagerly,
             false,
         )
 
@@ -228,11 +232,16 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
      */
     @OptIn(ExperimentalCoroutinesApi::class)
     val allowMultipleSelection = parsedIntent
-        .mapLatest { it is ParsedIntent.PickIntent && it.multiple }
+        .mapLatest {
+            when (it) {
+                is ParsedIntent.PickIntent -> it.multiple
+                else -> true
+            }
+        }
         .flowOn(Dispatchers.IO)
         .stateIn(
             viewModelScope,
-            SharingStarted.WhileSubscribed(),
+            SharingStarted.Eagerly,
             true,
         )
 
@@ -262,8 +271,38 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
                 is RequestStatus.Success -> it.data
 
                 is RequestStatus.Error -> {
-                    Log.e(LOG_TAG, "Cannot get media of $uri, error: ${it.error}")
-                    null
+                    // Build a `Media` object with the available data
+                    Log.i(
+                        LOG_TAG,
+                        "Cannot get media object from media provider, trying manual fallback"
+                    )
+                    when (type) {
+                        MediaType.IMAGE,
+                        MediaType.VIDEO ->
+                            Media(
+                                uri,
+                                type,
+                                applicationContext.contentResolver.getType(uri) ?: run {
+                                    Log.e(LOG_TAG, "Cannot get media type of $uri")
+                                    return null
+                                },
+                                uri,
+                                albumName = null,
+                                displayName = null,
+                                isFavorite = false,
+                                isTrashed = false,
+                                dateAdded = Date(),
+                                dateModified = Date(),
+                                width = 0,
+                                height = 0,
+                                orientation = 0,
+                            )
+
+                        else -> {
+                            Log.e(LOG_TAG, "Cannot build media object for $uri")
+                            null
+                        }
+                    }
                 }
             }
         }
