@@ -133,13 +133,10 @@ class IntentsViewModel(application: Application) : GlimpseViewModel(application)
 
                 intent.clipData?.let { clipData ->
                     // Do a best effort to get a valid media type from the clip data
-                    var mediaType: MediaType? = null
-                    for (i in 0 until clipData.description.mimeTypeCount) {
-                        val mimeType = clipData.description.getMimeType(i)
-                        MimeUtils.mimeTypeToMediaType(mimeType)?.let { type ->
-                            mediaType = type
+                    val mediaType =
+                        (0 until clipData.description.mimeTypeCount).firstNotNullOfOrNull {
+                            MimeUtils.mimeTypeToMediaType(clipData.description.getMimeType(it))
                         }
-                    }
 
                     clipData.asArray().forEach { item ->
                         uriToContent(item.uri, mediaType)?.let {
