@@ -22,7 +22,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
@@ -89,8 +88,6 @@ class AlbumFragment : Fragment(R.layout.fragment_album) {
     private val noMediaLinearLayout by getViewProperty<LinearLayout>(R.id.noMediaLinearLayout)
     private val recyclerView by getViewProperty<RecyclerView>(R.id.recyclerView)
     private val toolbar by getViewProperty<MaterialToolbar>(R.id.toolbar)
-    private val warningTrashTimePeriod by getViewProperty<TextView>(R.id.warningTrashTimePeriod)
-    private val warningTrashTimePeriodToolbar by getViewProperty<TextView>(R.id.textView)
 
     // System services
     private val wallpaperManager by lazy {
@@ -493,11 +490,6 @@ class AlbumFragment : Fragment(R.layout.fragment_album) {
                             recyclerView.isVisible = !isEmpty
                             toolbar.menu.findItem(R.id.emptyTrash)?.isVisible = !isEmpty
                             noMediaLinearLayout.isVisible = isEmpty
-
-                            if (albumRequest?.albumType == AlbumType.TRASH) {
-                                warningTrashTimePeriod.isVisible = isEmpty
-                                warningTrashTimePeriodToolbar.isVisible = !isEmpty
-                            }
                         }
 
                         is RequestStatus.Error -> {
