@@ -94,4 +94,5 @@
     <string name="set_wallpaper_home_screen">Écran d\'accueil</string>
     <string name="set_wallpaper_lock_screen">Écran de verrouillage</string>
     <string name="set_wallpaper_both">Écran d\'accueil et de verrouillage</string>
+    <string name="warning_bin_time_period">Les fichiers seront définitivement supprimés après 30 jours.</string>
 </resources>
