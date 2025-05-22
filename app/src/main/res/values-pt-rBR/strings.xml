@@ -20,16 +20,16 @@
         <item quantity="other">%d itens</item>
     </plurals>
     <plurals name="delete_file_forever_confirm_message">
-        <item quantity="one">Tem certeza que quer excluir permanentemente este arquivo?</item>
-        <item quantity="other">Tem certeza que deseja excluir %d arquivos permanentemente?</item>
+        <item quantity="one">Tem certeza de que quer apagar esse arquivo permanentemente?</item>
+        <item quantity="other">Tem certeza de que quer apagar %d arquivos permanentemente?</item>
     </plurals>
     <plurals name="delete_file_forever_successful">
         <item quantity="one">Arquivo excluído permanentemente</item>
         <item quantity="other">%d arquivos excluídos permanentemente</item>
     </plurals>
     <plurals name="delete_file_forever_unsuccessful">
-        <item quantity="one">O arquivo não pôde ser excluído permanentemente</item>
-        <item quantity="other">%d arquivos não puderam ser excluídos permanentemente</item>
+        <item quantity="one">O arquivo não pôde ser apagado permanentemente</item>
+        <item quantity="other">%d arquivos não puderam ser apagados permanentemente</item>
     </plurals>
     <plurals name="move_file_to_trash_confirm_message">
         <item quantity="one">Tem certeza de que deseja mover um arquivo para a Lixeira?</item>
