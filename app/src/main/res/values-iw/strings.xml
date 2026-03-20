@@ -117,4 +117,6 @@
     <string name="set_wallpaper_lock_screen">מסך נעילה</string>
     <string name="set_wallpaper_both">מסך בית ומסך נעילה</string>
     <string name="warning_bin_time_period">הקבצים יימחקו לצמיתות לאחר 30 יום.</string>
+    <string name="motion_photo_show_video">הצגת וידאו</string>
+    <string name="motion_photo_show_photo">הצגת תמונה</string>
 </resources>

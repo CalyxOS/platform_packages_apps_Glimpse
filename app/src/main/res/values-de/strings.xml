@@ -95,4 +95,6 @@
     <string name="set_wallpaper_lock_screen">Sperrbildschirm</string>
     <string name="set_wallpaper_both">Start- und Sperrbildschirm</string>
     <string name="warning_bin_time_period">Dateien werden nach 30 Tagen endgültig gelöscht.</string>
+    <string name="motion_photo_show_video">Video anzeigen</string>
+    <string name="motion_photo_show_photo">Foto anzeigen</string>
 </resources>

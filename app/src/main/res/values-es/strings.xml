@@ -95,4 +95,6 @@
     <string name="set_wallpaper_lock_screen">Pantalla de bloqueo</string>
     <string name="set_wallpaper_both">Pantalla de inicio y de bloqueo</string>
     <string name="warning_bin_time_period">Los archivos serán eliminados permanentemente después de 30 días.</string>
+    <string name="motion_photo_show_video">Mostrar vídeo</string>
+    <string name="motion_photo_show_photo">Mostrar foto</string>
 </resources>
