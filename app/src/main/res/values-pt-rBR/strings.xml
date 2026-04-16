@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
+     SPDX-FileCopyrightText: 2023-2026 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -95,4 +95,6 @@
     <string name="set_wallpaper_lock_screen">Tela de bloqueio</string>
     <string name="set_wallpaper_both">Tela inicial e de bloqueio</string>
     <string name="warning_bin_time_period">Os arquivos serão excluídos permanentemente após 30 dias.</string>
+    <string name="motion_photo_show_video">Mostrar vídeo</string>
+    <string name="motion_photo_show_photo">Mostrar foto</string>
 </resources>
