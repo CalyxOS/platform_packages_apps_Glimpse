@@ -18,6 +18,8 @@ android_app {
     product_specific: true,
 
     aaptflags: [
+        "--rename-manifest-package",
+        "org.calyxos.glimpse",
         // DO NOT EDIT THIS SECTION MANUALLY
         "--version-name",
         "1.0",
@@ -85,11 +87,6 @@ android_app {
         proguard_flags_files: ["proguard-rules.pro"],
         shrink_resources: true,
     },
-
-    aaptflags: [
-        "--rename-manifest-package",
-        "org.calyxos.glimpse",
-    ],
 }
 
 prebuilt_etc {
