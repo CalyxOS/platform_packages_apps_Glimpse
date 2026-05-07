@@ -1,6 +1,6 @@
 /*
- * SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
- * SPDX-FileCopyrightText: 2024-2025 The Calyx Institute
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-FileCopyrightText: The Calyx Institute
  * SPDX-License-Identifier: Apache-2.0
  */
 
