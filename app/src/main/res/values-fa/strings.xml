@@ -95,4 +95,10 @@
     <string name="set_wallpaper_lock_screen">صفحه قفل</string>
     <string name="set_wallpaper_both">صفحه اصلی و قفل</string>
     <string name="warning_bin_time_period">فایل‌ها پس از ۳۰ روز به طور دائمی حذف خواهند شد.</string>
+    <string name="edge_tap_navigation_enable_title">ناوبری با لمس لبه</string>
+    <string name="edge_tap_navigation_enabled_description">برای حرکت بین صفحه، روی لبه چپ یا راست صفحه ضربه بزنید</string>
+    <string name="double_tap_to_seek_enabled_title">فعال کردن دوبار ضربه زدن برای عقب و جلو کردن</string>
+    <string name="double_tap_to_seek_enabled_description">برای رفتن به عقب یا جلو، دو بار روی سمت چپ یا راست ویدیو ضربه بزنید</string>
+    <string name="double_tap_to_seek_seconds_title">برای نمایش مدت رد‌شدن، دو بار ضربه بزنید</string>
+    <string name="double_tap_to_seek_seconds_description">ثانیه‌هایی که هنگام دوبار ضربه زدن روی ویدیو باید رد شوند</string>
 </resources>
